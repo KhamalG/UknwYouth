@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { 
     Link, 
     BrowserRouter as Router,
     Routes, 
     Route } from "react-router-dom";
+import { ContactModal } from './contact';
 
 export function Home() {
+    const [isOpen, setIsOpen] = useState(false)
     return (
         <div>
             <video  src={require("./FloatingIcons/Logoy.mp4")} autoPlay loop muted
@@ -30,10 +32,13 @@ export function Home() {
                                 borderColor: "transparent",
                                 height: "25%",
                                 width: "25%",
-                }}>
+                }} onClick={() => setIsOpen(true)}>
                 <img src={require('./FloatingIcons/pc-unscreen.gif')} alt='Shop' width='50%' height='50%'></img>
                 <h1 style={{color: "white", fontSize: '16px'}}>Shop</h1>
                 </button>
+                <ContactModal open={isOpen} onClose={() => setIsOpen(false)} >
+                
+                </ContactModal>
             </Link>
             <Link to="/cart">
                 <button style={{
@@ -57,8 +62,8 @@ export function Home() {
                                 height: "25%",
                                 width: "25%",
                 }}>
-                <img src={require('./FloatingIcons/WwK9-unscreen.gif')} alt='About' width='50%' height='50%'></img>
-                <h1 style={{color: "white", fontSize: '16px'}}>About</h1>
+                <img src={require('./FloatingIcons/mario-block-unscreen.gif')} alt='About' width='50%' height='50%'></img>
+                <h1 style={{color: "white", fontSize: '16px'}}>Boring Shit</h1>
                 </button>
             </Link>
             <Link to="/contact">

@@ -3,7 +3,7 @@ import {Landing} from "./landingPage";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import {Home} from "./homePage";
 import { About } from "./about";
-import { Contact } from "./contact";
+import { ContactModal } from "./contact";
 
 export function PageRoutes() {
     return (
@@ -26,7 +26,7 @@ export function PageRoutes() {
                 <Route path="/shop" />
                 <Route path="/cart" />
                 <Route path="/boring-stuff" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
+                <Route path="/contact" element={<ContactModal />} />
             </Routes>
         </Router>
     )
